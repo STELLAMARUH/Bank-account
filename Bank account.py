@@ -1,7 +1,7 @@
 class BankAccount:
    
 
-    def __init__(self, first_name, last_name, phone_no, bank):
+   def __init__(self, first_name, last_name, phone_no, bank):
         self.first_name = first_name
         self.last_name = last_name
         self.phone_no = phone_no
@@ -11,16 +11,13 @@ class BankAccount:
         self.deposit_summary = []
         self.loan_balance = 0
 
-    def account_name(self):
-        name = "{} account for {} {}".format(
-            self.bank, self.first_name, self.last_name, self.phone_no, self.bank)
-        return name
-
+   def account_name(self): 
+     name = "{} account for {} {}".format
+     print( self.bank, self.first_name, self.last_name, self.phone_no, self.bank)
+            return name
+         
     def deposit(self, amount):
       
-      #return self.deposit_summary.append(amount)
-
-   
       if amount <= 0:
                
           print("You cannot deposit zero or negative")
@@ -39,37 +36,67 @@ class BankAccount:
        
       elif amount > self.balance:
             print("You don't have enough balance")
-      else:
-            self.balance -= amount
-            print("You have withdrawn {} from {}".format(amount, self.account_name()))
+      self.balance += amount
+         time = datetime.now()
+            get_time = time.strftime("%H:%M%p %d/%m/%Y")
+            get_time = time.strftime("%H:%M%p , %d/%m/%Y")
+            deposit = {
+                "time": "time",
+                "amount" : "amount"
+            }
+            print("Dear {} you have deposited {} at {}.Your current balance is {}".format(self.account_name(),amount,get_time,self.balance))
+            print("Dear {} ,you have deposited {} at {}.Your current balance is {}".format(self.account_name(),amount,get_time,self.balance))
 
+    def withdraw(self,amount):
+        try:
+@@ -63,7 +63,7 @@ def withdraw(self,amount):
+        else:
+            self.balance -= amount
+            time = datetime.now()
+            get_time = time.strftime("%H:%M%p  %d/%m/%Y")
+            get_time = time.strftime("%H:%M%p ,  %d/%m/%Y")
+            deposit = {
+                "time": "time",
+                "amount" : "amount"
+@@ -73,19 +73,19 @@ def withdraw(self,amount):
 
     def get_balance(self):
-   
-        return "The balance for {} is {}".format(self.account_name(), self.balance)
-    
- # """ write a method to return the witdrawal transactions
-  #define a method
-  #input amount
-  
-  #append to empty list
-  
-    
-    def lend_loan(self, loan):
-      if loan <= 0:
-        print("Invalid request")
+        time = datetime.now()
+        get_time = time.strftime("%H:%M%p  %d/%m/%Y")
+        get_time = time.strftime("%H:%M%p ,  %d/%m/%Y")
+        return "The balance for {} is {} at".format(self.account_name(), self.balance,get_time)
+
+    def deposit_statements(self):
+        for deposit in self.deposits:
+            time = datetime.now()
+            get_time = time.strftime("%H:%M%p  %d/%m/%Y")
+            get_time = time.strftime("%H:%M%p  , %d/%m/%Y")
+            print("{} at {}".format(deposit(),get_time))
+
+    def withdrawal_statements(self):
+        for withdraw in self.withdrawals:
+            time = datetime.now()
+            get_time = time.strftime("%H:%M%p  %d/%m/%Y")
+            get_time = time.strftime("%H:%M%p , ++ %d/%m/%Y")
+            print("{} at {}".format(withdraw(),get_time))
+             def request_loan(self, amount):
+      if amount<= 0:
+        print("You cannot requet for loan of tht amount")
         
       else: 
-        self.loan_balance += loan
-        print("{} you have borrowed {}".format(self.account_name(), loan))
+        self.loan = amount
+        print("You have been given loan of {}".format (amount)
       
-    def pay_loan(self, loan):
-      if loan <= 0:
-        print("Invalid amount to reduce your loan")
-      else:
-        self.loan_balance -= loan
-        print(" You have repaid {}".format(loan))
-      
+    def repay_loan(self, amount):
+      if amount<= 0:
+        print("You cannot repay with that amount")
+      elif self.loan == 0:
+        print("You don't have loan at the moment")
+        elif amount > self.loan:
+          print("your loan is {}, please enter amount that is less or equal to the amount")
+        else:
+        print(" You have repayed your loan with {}.your loan balance is{}".format(mount))
+       
     def deposit_statement(self, amount):
       self.deposit(self, amount)
       
@@ -84,50 +111,18 @@ class BankAccount:
       
     
     
-acc1 = BankAccount(" stella", "Maruh", +2547900758176, " Union")
+acc1 = BankAccount(" Maruh", "Stella", +254790075817, "KCB")
 print(acc1.phone_no)
-acc1.deposit(9000)
-acc1.withdraw(19000)
-acc1.withdraw(12000)
-acc1.deposit(14000)
-acc1.deposit(21400)
-acc1.lend_loan(71000)
-acc1.lend_loan(201000)
-acc1.pay_loan(155000) 
+acc1.deposit(50000)
+acc1.withdraw(15000)
+acc1.withdraw(1200)
+acc1.deposit(4000)
+acc1.deposit(2400)
+acc1.lend_loan(7000)
+acc1.lend_loan(20000)
+acc1.pay_loan(15000) 
 print(acc1.loan_balance)
 
 print(acc1.deposit_summary)
-
-
-
-        
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
