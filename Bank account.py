@@ -148,14 +148,14 @@ class Account:
       
     
     
-acc1 = BankAccount(" Irine", "Joy", +254717601136, " Union")
+acc1 = BankAccount("Stella", "Mruh", +254717601136, " Union")
 print(acc1.phone_no)
-acc1.deposit(50000)
-acc1.withdraw(15000)
-acc1.withdraw(1200)
+acc1.deposit(60000)
+acc1.withdraw(16000)
+acc1.withdraw(1500)
 acc1.deposit(4000)
-acc1.deposit(2400)
-acc1.lend_loan(7000)
+acc1.deposit(2500)
+acc1.lend_loan(3000)
 acc1.lend_loan(20000)
 acc1.pay_loan(15000) 
 print(acc1.loan_balance)
